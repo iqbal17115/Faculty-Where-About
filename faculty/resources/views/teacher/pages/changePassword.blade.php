@@ -1,0 +1,45 @@
+@extends('teacher.master')
+
+@section('content')
+ <style>
+    #profile{
+    background-color: muted;
+    width: 300px;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    bottom: 0px;
+    margin: auto;
+    border: 1px solid black;
+  
+    }
+ </style>
+  <div class="wrapper">
+     <div class="container mt-4">
+       
+       <div id="profile">
+        <h2 class="bg-info text-center py-2 m-0">Change Password</h2>
+        <div class="p-4 text-dark bg-dark font-weight-bold">
+           
+           <form action="/teacher/changePassword" method="post">
+           @csrf
+            
+             <div class="form-group">
+                <input type="password" name="currentPassword" class="form-control" placeholder="Current Password" required>
+             </div>
+
+             <div class="form-group">
+                <input type="password" name="newPassword" class="form-control" placeholder="New Password" required>
+             </div>
+             
+             <button class="btn btn-primary btn-block">Change Password</button>
+           </form>
+
+        </div>
+       </div>
+
+     </div>
+     <br>
+   </div>
+
+@endsection
